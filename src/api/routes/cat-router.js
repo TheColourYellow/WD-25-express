@@ -7,7 +7,7 @@ import {
   putCat,
   deleteCat,
 } from '../controllers/cat-controller.js';
-import {createThumbnail} from '../../middlewares.js';
+import createThumbnail from '../../middlewares.js';
 
 const catRouter = express.Router();
 
@@ -23,6 +23,7 @@ catRouter
   .post(upload.single('file'), createThumbnail, postCat);
 
 catRouter.route('/:id').get(getCatById).put(putCat).delete(deleteCat);
+//.post(postCat);
 /* Sama kuin:
 catRouter.route('/id').get(getCatById)
 catRouter.route('/id').put(putCat)
