@@ -4,8 +4,8 @@ const getCat = async (req, res) => {
   res.json(await listAllCats());
 };
 
-const getCatById = (req, res) => {
-  const cat = findCatById(req.params.id);
+const getCatById = async (req, res) => {
+  const cat = await findCatById(req.params.id);
   if (cat) {
     res.json(cat);
   } else {
@@ -14,12 +14,11 @@ const getCatById = (req, res) => {
 };
 
 const postCat = async (req, res) => {
-  console.log(`Body data: ${req.body}`);
   console.log(req.file);
+  console.log('???????????????' + req.body.filename);
   req.body.filename = req.file.filename;
+  //console.log('!!!!!!!!!!!!!!!' + req.file.filename);
   const result = await addCat(req.body);
-  console.log(`Form data: $${result}`);
-  //console.log(`File data: ${req.file}`);
   if (result.cat_id) {
     res.status(201);
     res.json({message: 'New cat added.', result});
