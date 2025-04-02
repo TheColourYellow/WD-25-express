@@ -19,4 +19,4 @@ const createThumbnail = async (req, res, next) => {
   next();
 };
 
-export {createThumbnail};
+export default createThumbnail;
