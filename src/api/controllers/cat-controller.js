@@ -25,11 +25,11 @@ const postCat = (req, res) => {
   }
 };
 
-const putCat = (res) => {
+const putCat = (req, res) => {
   res.json({message: 'Cat item updated.'});
 };
 
-const deleteCat = (res) => {
+const deleteCat = (req, res) => {
   res.json({message: 'Cat item deleted.'});
 };
 
