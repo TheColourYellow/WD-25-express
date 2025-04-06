@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/vi/users
+Content-Type: application/json
+
+{
+    "name": "Taas Jotakin",
+    "username": "Taas",
+    "password": "salasana",
+    "email": "email.longemail@email.com"
+}
